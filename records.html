@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f5">
+    <title>ACK 통화 기록</title>
+  </head>
+  <body>
+    <main>
+      <p class="brand">ACK</p>
+      <h1>통화 기록</h1>
+      <p id="record-retention" class="intro"></p>
+      <nav><a href="/">발신자 화면</a> · <a href="/agent">담당자 화면</a></nav>
+      <section aria-labelledby="records-heading" class="card">
+        <h2 id="records-heading">종료된 통화</h2>
+        <p id="records-status" role="status">통화 기록을 불러오는 중입니다.</p>
+        <ul id="records-list"></ul>
+        <button id="refresh-records" type="button">목록 새로고침</button>
+      </section>
+      <p id="error" role="alert" hidden></p>
+      <section id="record" aria-labelledby="record-heading" class="card" hidden>
+        <h2 id="record-heading">통화 상세</h2>
+        <dl>
+          <dt>종료 시각</dt><dd id="ended-at"></dd>
+          <dt>분류 부서</dt><dd id="department"></dd>
+          <dt>문의 요약</dt><dd id="summary"></dd>
+          <dt>AI 문의 전사</dt><dd id="transcript" class="transcript"></dd>
+          <dt>연결 이후 전사</dt><dd id="conversation-transcript" class="transcript"></dd>
+          <dt>인계 시도별 결과</dt><dd id="handoff-attempt" class="transcript"></dd>
+          <dt>최종 인계 결과</dt><dd id="handoff-outcome"></dd>
+        </dl>
+      </section>
+    </main>
+    <script type="module" src="/src/records-page.ts"></script>
+  </body>
+</html>

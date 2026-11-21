@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f5">
+    <title>ACK 담당자</title>
+  </head>
+  <body>
+    <main>
+      <p class="brand">ACK</p>
+      <h1>담당자 화면</h1>
+      <nav><a href="/">발신자 화면</a></nav>
+      <section aria-labelledby="agent-heading" class="card">
+        <h2 id="agent-heading">인계 대기</h2>
+        <p id="status" role="status" aria-live="polite">대기를 시작하면 인계 요청을 받을 수 있습니다.</p>
+        <div class="actions">
+          <button id="start" type="button">대기 시작</button>
+          <button id="leave" type="button" hidden>대기 종료</button>
+        </div>
+        <p id="error" role="alert" hidden></p>
+      </section>
+      <section id="request" aria-labelledby="request-heading" class="card" hidden>
+        <h2 id="request-heading">인계 요청</h2>
+        <dl>
+          <dt>분류 부서</dt><dd id="department"></dd>
+          <dt>문의 요약</dt><dd id="summary"></dd>
+          <dt>남은 시간</dt><dd id="time" role="timer"></dd>
+        </dl>
+        <div class="actions">
+          <button id="summary-play" type="button" disabled>음성 요약 듣기</button>
+          <button id="accept" type="button">수락</button>
+          <button id="reject" type="button">거절</button>
+          <button id="hang-up" type="button" hidden>통화 종료</button>
+          <button id="play-peer" type="button" hidden>발신자 음성 재생</button>
+        </div>
+        <audio id="summary-audio"></audio>
+        <audio id="peer-audio"></audio>
+      </section>
+    </main>
+    <script type="module" src="/src/agent.ts"></script>
+  </body>
+</html>

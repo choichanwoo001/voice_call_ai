@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f5">
+    <title>ACK 음성 문의</title>
+  </head>
+  <body>
+    <main>
+      <p class="brand">ACK</p>
+      <h1>음성 문의</h1>
+      <p class="intro">마이크로 테스트용 ACK 문의를 말해 보세요.</p>
+      <nav><a href="/agent" target="_blank" rel="noopener">담당자 화면 열기</a> · <a href="/records" target="_blank" rel="noopener">통화 기록</a></nav>
+      <section aria-labelledby="call-heading" class="card">
+        <h2 id="call-heading">AI 상담</h2>
+        <p id="status" role="status" aria-live="polite">통화를 시작하면 마이크를 사용합니다.</p>
+        <p id="ai-reply" hidden></p>
+        <div class="actions">
+          <button id="start" type="button">통화 시작</button>
+          <button id="end" type="button" disabled>통화 종료</button>
+          <button id="play" type="button" hidden>음성 응답 재생</button>
+          <button id="play-peer" type="button" hidden>담당자 음성 재생</button>
+        </div>
+        <audio id="peer-audio"></audio>
+        <p id="error" role="alert" hidden></p>
+      </section>
+      <section id="result" aria-labelledby="result-heading" class="card" hidden>
+        <h2 id="result-heading">문의 결과</h2>
+        <dl>
+          <dt>전사</dt><dd id="transcript"></dd>
+          <dt>연결 이후 전사</dt><dd id="conversation-transcript" class="transcript">—</dd>
+          <dt>분류 부서</dt><dd id="department">—</dd>
+          <dt>문의 요약</dt><dd id="summary">—</dd>
+          <dt>인계 결과</dt><dd id="handoff-outcome">—</dd>
+          <dt>종료 시각</dt><dd id="ended-at">—</dd>
+        </dl>
+      </section>
+    </main>
+    <script type="module" src="/src/caller.ts"></script>
+  </body>
+</html>

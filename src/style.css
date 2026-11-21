@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;650;750&display=swap");
+
+:root {
+  font-family: "DM Sans", "Malgun Gothic", sans-serif;
+  color: #18332a;
+  background: #f4f7f5;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+main { width: min(100% - 2rem, 42rem); margin: clamp(2rem, 9vh, 6rem) auto; }
+.brand { color: #326b55; font-weight: 750; letter-spacing: .16em; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -.045em; margin: .4rem 0; }
+h2 { font-size: 1.1rem; margin: 0 0 .8rem; }
+.intro, #status { color: #405a50; line-height: 1.65; }
+.card { background: white; border: 1px solid #d7e3db; border-radius: 1rem; padding: clamp(1rem, 4vw, 1.75rem); margin-top: 1.2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.25rem; }
+button { border-radius: .5rem; padding: .7rem 1.15rem; font: inherit; font-weight: 650; cursor: pointer; border: 1px solid #286147; }
+button:focus-visible { outline: 3px solid #3c825f; outline-offset: 3px; }
+button:disabled { opacity: .45; cursor: default; }
+#start, #accept { color: white; background: #286147; }
+a { color: #286147; text-underline-offset: .2em; }
+button:not(#start, #accept) { color: #286147; background: white; }
+#error { color: #962b25; margin-bottom: 0; }
+dl { display: grid; grid-template-columns: minmax(5.5rem, 1fr) 3fr; gap: .8rem; margin-bottom: 0; line-height: 1.6; }
+dt { font-weight: 650; }
+dd { margin: 0; overflow-wrap: anywhere; }
+.transcript { white-space: pre-wrap; }
+#records-list { list-style: none; padding: 0; display: grid; gap: .5rem; }
+#records-list:empty { display: none; }
+#records-list button { width: 100%; text-align: left; }
+#records-list button[aria-pressed="true"] { background: #e4f1e9; }
