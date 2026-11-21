@@ -1,0 +1,9 @@
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+.call-records/
